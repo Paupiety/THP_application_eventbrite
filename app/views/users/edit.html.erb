@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Modifier son profil</title>
+</head>
+<body>
+    <%if flash[:error]%>
+        <div class="alert alert-danger" role="alert">
+            <%= flash[:error]%>
+        </div>
+        <%elsif flash[:success]%>
+        <div class="alert alert-success" role="alert">
+            <%= flash[:success]%>
+        </div>
+    <%end%>
+  <main>
+    <section>
+     <h1> Modifie ton profil </h1>
+        <%= form_tag url_for(controller: "users", action: "update"), method: "patch" do%>
+            <div class= "form_inscription">
+                <%= label_tag :first_name, "Prénom"%>
+                <%= text_field_tag :first_name, current_user.first_name, class:"form-control"%>
+                <%= label_tag :last_name, "Nom"%>
+                <%= text_field_tag :last_name, current_user.last_name, class:"form-control"%>
+                <%= label_tag :description, "Description"%>
+                <%= text_field_tag :description, current_user.description ? current_user.description : nil , class:"form-control"%>
+                <%= submit_tag "Valider", class:'btn btn_inscription'%>
+            </div>
+        <%end%>
+    </section>
+  </main>
+</body>
+</html>

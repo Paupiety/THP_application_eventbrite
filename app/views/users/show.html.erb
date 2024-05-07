@@ -5,12 +5,23 @@
   <title>Profil</title>
 </head>
 <body>
+    <%if flash[:error]%>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:error]%>
+  </div>
+  <%elsif flash[:success]%>
+  <div class="alert alert-success" role="alert">
+    <%= flash[:success]%>
+  </div>
+  <%end%>
   <main>
     <section>
       <div>
         <h1> <%=@user.first_name%> <%=@user.last_name%> </h1>
         <p> <%=@user.description%></p>
-        <%= link_to "Edit email / password", edit_user_registration_path %>
+        <%= link_to "Modifiee tes identifiants", edit_user_registration_path %>
+        <%= link_to "Modifie ton profil", edit_user_path %>
+
       </div>
       </div>  
         <div class="row">

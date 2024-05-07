@@ -1,11 +1,12 @@
 class EventsController < ApplicationController
+    before_action :authenticate_user!, except: [:index]
 
     def index()
         @events = Event.all
     end
 
     def create()
-        @event = Event.new(start_date: params[:start_date], duration: params[:duration], title: params[:title], description: params[:description], price: params[:price], location: params[:location], user: User.first)
+        @event = Event.new(start_date: params[:start_date], duration: params[:duration], title: params[:title], description: params[:description], price: params[:price], location: params[:location], user: current_user)
         if @event.save
             redirect_to events_path
             flash[:success] = "Votre événement a bien été créé"

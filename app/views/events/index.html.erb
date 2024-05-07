@@ -7,7 +7,15 @@
 <body>
   <main>
     <section>
-      
+      <%if flash[:error]%>
+        <div class="alert alert-danger" role="alert">
+            <%= flash[:error]%>
+        </div>
+        <%elsif flash[:success]%>
+        <div class="alert alert-success" role="alert">
+            <%= flash[:success]%>
+        </div>
+    <%end%>
       <div>
         <h1> Tous les événements </h1>
         <a href="/events/new" class="btn btn-primary">Créer un événement</a>

@@ -19,7 +19,7 @@
             <%= @event.start_date%>
           </div>
           <div>
-          <p> Crée par <a href="/users/<%=@event.user.id%>"> <%= @event.user.first_name%> </a></p>
+          <p> Crée par <%= @event.user.first_name%> <%= @event.user.last_name%></p>
         </div>
 
         <a href="/events" class="btn btn-primary">Retournez aux événements</a>
@@ -27,5 +27,3 @@
   </main>
 </body>
 </html>
-
-(start_date: params[:start_date], duration: params[:duration], price: params[:price], , user: User.first)
