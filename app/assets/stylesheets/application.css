@@ -22,11 +22,12 @@
 }
 
 body {
-  font-size: 0.8rem;
+  --secondary_color: #7a5ff4;
+  --font-size: 1.2rem;
+  font-size: var(--font-size);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-style: normal;
-  --secondary_color: #7A5FF4
 }
 
 .form_devise {
@@ -52,7 +53,7 @@ h1 {
   font-style: normal;
   font-weight: 800;
   color: #0e173e;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .white {
@@ -65,7 +66,7 @@ h2 {
   font-style: normal;
   font-weight: 700;
   color: #0e173e;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .color_font {
@@ -96,12 +97,12 @@ p {
 .a_nav {
   color: #f0f1f6;
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: var(--font-size);
   margin-left: 1rem;
 }
 
-.a_nav:hover{
-   color: var(--secondary_color)
+.a_nav:hover {
+  color: var(--secondary_color);
 }
 
 .btn_second:hover {
@@ -149,7 +150,7 @@ a {
   border: 0.5px solid #f0f1f6;
   border-radius: 4px;
   color: #f0f1f6;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-style: normal;
 }
 
@@ -160,7 +161,7 @@ a {
   border: none;
   border-radius: 4px;
   color: #f0f1f6;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-style: normal;
 }
 
@@ -169,7 +170,7 @@ a {
   width: min-content;
   color: #0e173e;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   height: fit-content;
 }
 
@@ -180,7 +181,7 @@ a {
   border: none;
   border-radius: 4px;
   color: #f0f1f6;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-style: normal;
 }
 
@@ -191,7 +192,7 @@ a {
 }
 
 i {
-  font-size: 20px;
+  font-size: 1.8rem;
 }
 
 .btn_primary:hover {
@@ -214,7 +215,7 @@ i {
   font-style: normal;
   font-weight: 800;
   color: var(--secondary_color);
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 .infos_accueil {
@@ -225,7 +226,7 @@ i {
   color: #f0f1f6;
   padding: 0.2rem 0.5rem 0.2rem;
   border-radius: 999px;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
 
@@ -255,6 +256,8 @@ i {
   color: #f0f1f6;
   font-size: 0.8rem;
   font-style: normal;
+  width: 3rem;
+  height: 3rem;
 }
 
 .plus_icone:hover {
