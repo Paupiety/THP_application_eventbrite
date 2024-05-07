@@ -6,7 +6,7 @@
 </head>
 <body>
   <main>
-    <section>
+    <section class="hero_section">
       <%if flash[:error]%>
         <div class="alert alert-danger" role="alert">
             <%= flash[:error]%>
@@ -15,28 +15,41 @@
         <div class="alert alert-success" role="alert">
             <%= flash[:success]%>
         </div>
-    <%end%>
-      <div>
-        <h1> Tous les événements </h1>
-        <a href="/events/new" class="btn btn-primary">Créer un événement</a>
-      </div>  
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card">
-              <%@events.each do |event|%>
+      <%end%>
+      <div >
+        <h1 class=white> Bienvenue dans Eventbrite </h1>
+        <a href="/events/new" class="btn btn-primary btn_primary">Créer un événement</a>
+      </div> 
+    </section>
+    <section>
+      <h1> Tous les événements </h1>
+          <div class=cards>
+            <%@events.each do |event|%>
+            <div class="card color_card" style="width: 18rem;">
                 <div class="card-body">
-                  <h2><%= event.title%></h2>
-                  <p><%= event.description%></p>
-                  <div>
-                    <%= event.start_date%>
-                    <%= event.price%>
-                    <a href="/events/<%= event.id%>" class="btn btn-primary">En savoir plus</a>
+                  <h2 class=color_font><%= event.title%></h2>
+                  <div class="inline margin_bottom">
+                    <div class=infos_accueil>
+                      <i class="bi bi-geo-alt-fill small_icone"></i> <%= event.location%>
+                    </div>
+                    <div class=infos_accueil>
+                      <i class="bi bi-calendar-event small_icone"></i> <%= event.start_date.strftime('%d'"/"'%m')%>
+                    </div>
                   </div>
+                  <p><%= event.description%></p>
+                    <div class="inline space_between price_plus">
+                      <div class=price>
+                        <%= event.price%>€
+                      </div>
+                      <div>
+                      <a href="/events/<%= event.id%>" class="btn btn-primary plus_icone"><i class="bi bi-plus"></i></a>
+                      </div>
+                    </div>
                 </div>
-              <%end%>
             </div>
+            <%end%>
           </div>
-      </div>
+    </section>
     </section>
   </main>
 </body>

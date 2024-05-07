@@ -11,18 +11,22 @@
         <h1> Événement  </h1>
       </div>  
         <div>
-          <h2><%= @event.title%></h2>
-          <p><%= @event.description%></p>
-          <p><%= @event.location%>
-          <div>
-            <%= @event.duration%>
-            <%= @event.start_date%>
+          <h2 class=event_title><%= @event.title%></h2>
+          <p class="citation"> Crée par <%= @event.user.first_name%> <%= @event.user.last_name%></p>
+          <div class="inline margin_bottom">
+            <div class=infos_accueil>
+              <i class="bi bi-geo-alt-fill small_icone"></i> <%= @event.location%>
+            </div>
+            <div class=infos_accueil>
+              <i class="bi bi-calendar-event small_icone"></i> <%= @event.start_date.strftime('%d'"/"'%m'" à ""%H""h")%>
+            </div>
+            <div class=infos_accueil>
+              <i class="bi bi-clock-fill small_icone"></i> <%= @event.duration%> min
+            </div>
           </div>
-          <div>
-          <p> Crée par <%= @event.user.first_name%> <%= @event.user.last_name%></p>
-        </div>
+          <p class=margin_bottom><%= @event.description%></p>
 
-        <a href="/events" class="btn btn-primary">Retournez aux événements</a>
+        <a href="#" class="btn btn-primary btn_primary">Participer</a>
     </section>
   </main>
 </body>

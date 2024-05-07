@@ -2,9 +2,14 @@ class UsersController < ApplicationController
     before_action :authenticate_user!
     
     def show()
-            current_user_id?
+        puts current_user_id?
+        if current_user_id?
             id = params[:id]
             @user = User.find(id)
+        else
+            redirect_to events_path
+            flash[:error] = "Bien essayé mais tu ne peux pas accéder à la page profil d'un autre utilisateur mouhahahaha"
+        end
     end
 
     def update()
@@ -19,11 +24,22 @@ class UsersController < ApplicationController
     end
 
     def current_user_id?
+        find = true
         id = params[:id]
-        unless current_user.id == id
-            redirect_to events_path
-            flash[:error] = "Bien essayé mais tu ne peux pas accéder à la page profil d'un autre utilisateur mouhahahaha"
+        if current_user.id.to_i != id.to_i
+            find = false
         end
+        return find
     end
 
 end
+
+# def current_user_id?
+#     id = params[:id]
+#     puts id
+#     puts "curent user fjdkfhidrne #{current_user.id}"
+#     unless current_user.id == id
+#         redirect_to events_path
+#         flash[:error] = "Bien essayé mais tu ne peux pas accéder à la page profil d'un autre utilisateur mouhahahaha"
+#     end
+# end

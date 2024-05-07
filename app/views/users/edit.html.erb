@@ -15,19 +15,26 @@
         </div>
     <%end%>
   <main>
-    <section>
+    <section class="section_center">
      <h1> Modifie ton profil </h1>
-        <%= form_tag url_for(controller: "users", action: "update"), method: "patch" do%>
-            <div class= "form_inscription">
+      <%= form_tag url_for(controller: "users", action: "update"), method: "patch" do%>
+        <div class= "form_inscription forms_gap">
+              <div>
                 <%= label_tag :first_name, "Prénom"%>
                 <%= text_field_tag :first_name, current_user.first_name, class:"form-control"%>
+              </div>
+              <div>
                 <%= label_tag :last_name, "Nom"%>
                 <%= text_field_tag :last_name, current_user.last_name, class:"form-control"%>
+              </div>
+              <div>
                 <%= label_tag :description, "Description"%>
-                <%= text_field_tag :description, current_user.description ? current_user.description : nil , class:"form-control"%>
-                <%= submit_tag "Valider", class:'btn btn_inscription'%>
-            </div>
-        <%end%>
+                <%= text_area_tag :description, current_user.description ? current_user.description : nil , class:"form-control description"%>
+              </div>
+                <%= submit_tag "Valider", class:'btn btn_inscription btn_second'%>
+        </div>
+      <%end%>
+      
     </section>
   </main>
 </body>

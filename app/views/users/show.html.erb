@@ -17,32 +17,41 @@
   <main>
     <section>
       <div>
-        <h1> <%=@user.first_name%> <%=@user.last_name%> </h1>
-        <p> <%=@user.description%></p>
-        <%= link_to "Modifiee tes identifiants", edit_user_registration_path %>
-        <%= link_to "Modifie ton profil", edit_user_path %>
-
+        <h1> Ton profil</h1>
+        <h2> <%=@user.first_name%> <%=@user.last_name%> </h2>
+        <p class=margin_bottom> <%=@user.description%></p>
+        <div class="btn btn_primary"><%= link_to "Modifier ses identifiants", edit_user_registration_path %></div>
+        <div class="btn btn_primary"><%= link_to "Modifier son profil", edit_user_path %></div>
       </div>
       </div>  
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card">
-              <%@user.events.each do |event|%>
+      <h1> Tes événements</h1>
+         <div class=cards>
+            <%@user.events.each do |event|%>
+            <div class="card color_card" style="width: 18rem;">
                 <div class="card-body">
-                  <h2><%= event.title%></h2>
-                  <p><%= event.description%></p>
-                  <div>
-                    <%= event.start_date%>
-                    <%= event.price%>
-                    <a href="/events/<%= event.id%>" class="btn btn-primary">En savoir plus</a>
+                  <h2 class=color_font><%= event.title%></h2>
+                  <div class="inline margin_bottom">
+                    <div class=infos_accueil>
+                      <i class="bi bi-geo-alt-fill small_icone"></i> <%= event.location%>
+                    </div>
+                    <div class=infos_accueil>
+                      <i class="bi bi-calendar-event small_icone"></i> <%= event.start_date.strftime('%d'"/"'%m')%>
+                    </div>
                   </div>
+                  <p><%= event.description%></p>
+                    <div class="inline space_between price_plus">
+                      <div class=price>
+                        <%= event.price%>€
+                      </div>
+                      <div>
+                      <a href="/events/<%= event.id%>" class="btn btn-primary plus_icone"><i class="bi bi-plus"></i></a>
+                      </div>
+                    </div>
                 </div>
-              <%end%>
             </div>
-          </div>
-      </div>
-      
+            <%end%>
     </section>
   </main>
 </body>
 </html>
+
