@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Événement</title>
+</head>
+<body>
+  <main>
+    <section>
+      <div>
+        <h1> Événement  </h1>
+      </div>  
+        <div>
+          <h2><%= @event.title%></h2>
+          <p><%= @event.description%></p>
+          <p><%= @event.location%>
+          <div>
+            <%= @event.duration%>
+            <%= @event.start_date%>
+          </div>
+          <div>
+          <p> Crée par <a href="/users/<%=@event.user.id%>"> <%= @event.user.first_name%> </a></p>
+        </div>
+
+        <a href="/events" class="btn btn-primary">Retournez aux événements</a>
+    </section>
+  </main>
+</body>
+</html>
+
+(start_date: params[:start_date], duration: params[:duration], price: params[:price], , user: User.first)

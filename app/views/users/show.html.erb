@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Profil</title>
+</head>
+<body>
+  <main>
+    <section>
+      <div>
+        <h1> <%=@user.first_name%> <%=@user.last_name%> </h1>
+        <p> <%=@user.description%></p>
+      </div>
+      </div>  
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <%@user.events.each do |event|%>
+                <div class="card-body">
+                  <h2><%= event.title%></h2>
+                  <p><%= event.description%></p>
+                  <div>
+                    <%= event.start_date%>
+                    <%= event.price%>
+                    <a href="/events/<%= event.id%>" class="btn btn-primary">En savoir plus</a>
+                  </div>
+                </div>
+              <%end%>
+            </div>
+          </div>
+      </div>
+      
+    </section>
+  </main>
+</body>
+</html>

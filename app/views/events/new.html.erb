@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Créer un événement</title>
+</head>
+<body>
+  <main>
+    <section>
+     <h1> </h1>
+        <%= form_tag url_for(controller: "events", action: "create"), method: "post" do%>
+            <div class= "form_inscription">
+                <%= label_tag :title, "Titre"%>
+                <%= text_field_tag :title, nil, class:"form-control"%>
+                <%= label_tag :description, "Description"%>
+                <%= text_field_tag :description, nil, class:"form-control"%>
+                <%= label_tag :location, "Lieu"%>
+                <%= text_field_tag :location, nil, class:"form-control"%>
+                <%= label_tag :price, "Prix"%>
+                <%= number_field_tag :price, nil, class:"form-control"%>
+                <%= label_tag :start_date, "Date de début"%>
+                <%= datetime_field_tag :start_date, nil, class:"form-control"%>
+                <%= label_tag :duration, "Durée en minute"%>
+                <%= number_field_tag :duration, nil, class:"form-control"%>
+                <%= submit_tag "Valider", class:'btn btn_inscription'%>
+            </div>
+        <%end%>
+    </section>
+  </main>
+</body>
+</html>
