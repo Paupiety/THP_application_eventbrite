@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Modifier l'événement</title>
+</head>
+<body>
+    <%if flash[:error]%>
+        <div class="alert alert-danger" role="alert">
+            <%= flash[:error]%>
+        </div>
+        <%elsif flash[:success]%>
+        <div class="alert alert-success" role="alert">
+            <%= flash[:success]%>
+        </div>
+    <%end%>
+  <main>
+    <section class="section_center">
+     <h1> Modifie ton événement </h1>
+        <%= form_tag url_for(controller: "events", action: "update"), method: "patch" do%>
+            <div class= "form_inscription forms_gap">
+              <div>
+                <%= label_tag :title, "Titre"%>
+                <%= text_field_tag :title, @event.title, class:"form-control"%>
+              </div>
+              <div>
+                <%= label_tag :description, "Description"%>
+                <%= text_area_tag :description, @event.description, class:"form-control description"%>
+              </div>
+              <div class=inline>
+                <div>
+                  <%= label_tag :price, "Prix"%>
+                  <%= number_field_tag :price, @event.price, class:"form-control"%>
+                </div>
+              </div>
+              <div class=inline>
+                <div>
+                  <%= label_tag :location, "Lieu"%>
+                <%= text_field_tag :location, @event.location, class:"form-control"%>
+                </div>
+              </div>
+                  <%= submit_tag "Valider", class:'btn btn_inscription btn_primary'%>
+            </div>
+        <%end%>
+        <%= button_to "Supprimer l'événement", @event, method: :delete, class:'btn btn_inscription btn_primary'%>
+    </section>
+  </main>
+</body>
+</html>
+      
+    </section>
+  </main>
+</body>
+</html>

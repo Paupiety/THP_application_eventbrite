@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Participants de l'événement</title>
+</head>
+<body>
+  <main>
+    <section class="hero_section">
+      <%if flash[:error]%>
+        <div class="alert alert-danger" role="alert">
+            <%= flash[:error]%>
+        </div>
+        <%elsif flash[:success]%>
+        <div class="alert alert-success" role="alert">
+            <%= flash[:success]%>
+        </div>
+      <%end%>
+      <div >
+        <h1 class=white> Participants de l'événement </h1>
+        <div class="btn btn_primary"><%= link_to "Modifier l'événement", edit_event_path(@event.id)%></div>
+      </div> 
+    </section>
+    <section>
+      <div class=price>
+        <%= @event.users.count%>
+      </div>
+      <%if @event.users.count != 0%>
+        <%@event.users.each do |user|%>
+          <p class=color_font><%= user.first_name%> <%= user.last_name%></p>
+        <%end%>
+      <%elsif @event.users.count == 0%>
+        <p>Il n'y a pas de participant pour le moment.</p>
+      <%end%>
+      <div class="btn btn_primary"><%= link_to "Retour", event_path(@event.id)%></div>
+          
+    </section>
+    </section>
+  </main>
+</body>
+</html>

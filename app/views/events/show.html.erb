@@ -7,6 +7,15 @@
 <body>
   <main>
     <section>
+      <%if flash[:error]%>
+        <div class="alert alert-danger" role="alert">
+            <%= flash[:error]%>
+        </div>
+        <%elsif flash[:success]%>
+        <div class="alert alert-success" role="alert">
+            <%= flash[:success]%>
+        </div>
+      <%end%>
       <div>
         <h1> Événement  </h1>
       </div>  
@@ -25,7 +34,12 @@
             </div>
           </div>
           <p class=margin_bottom><%= @event.description%></p>
-          <%=button_to "Réserver une place", checkout_create_path(total:@event.price, event_id: @event.id), class: "btn btn-primary btn_primary", data: {turbo: false}%>
+          <div class=inline>
+            <%=button_to "Réserver une place", checkout_create_path(total:@event.price, event_id: @event.id), class: "btn btn-primary btn_primary", data: {turbo: false}%>
+            <%if current_user?(@event)%>
+              <a href="/events/<%=@event.id%>/attendances" class="btn btn-primary btn_primary">Voir les participants</a>
+            <%end%>
+          </div>
     </section>
   </main>
 </body>

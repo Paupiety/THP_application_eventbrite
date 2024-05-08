@@ -20,8 +20,31 @@ class EventsController < ApplicationController
         id = params[:id]
         @event = Event.find(id)
     end
-    
 
+    def edit()
+        id = params[:id]
+        @event = Event.find(id)
+    end
 
+    def update()
+        id = params[:id]
+        @event = Event.find(id)
+        @update = @event.update(title: params[:title], description: params[:description], price: params[:price], location: params[:location])
+        if @update
+            redirect_to "/events/#{@event.id}"
+            flash[:success] = "Ton événement a bien été modifié"
+        else
+            redirect_to "/events/#{@event.id}/edit"
+            flash[:error] = "Une erreur a été détecté :#{@event.errors.full_messages.join(",")}"
+        end 
+    end
+
+    def destroy()
+        id = params[:id]
+        @event = Event.find(id)
+        @event.destroy
+        redirect_to root_path
+        flash[:success] = "Votre événement a bien été supprimé"
+    end
 
 end
