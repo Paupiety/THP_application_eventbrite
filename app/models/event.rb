@@ -8,6 +8,7 @@ class Event < ApplicationRecord
     has_many :attendances
     has_many :users, through: :attendances
     belongs_to :user
+    validate :start_must_be_before_end_date
     
 
     # def end_date()
@@ -18,7 +19,8 @@ class Event < ApplicationRecord
 
     def start_must_be_before_end_date()
         datetime_now = DateTime.now
-        errors.add(:start_date, "Do you really want to finish your holidays before you've even started ?") unless 
-            :start_date < datetime_now
+        start_date = self.start_date
+        errors.add(:start_date, "Tu veux vraiment finir tes vacances avant de les avoir terminées ?") if 
+            start_date < datetime_now
     end 
 end

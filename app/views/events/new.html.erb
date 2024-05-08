@@ -7,6 +7,15 @@
 <body>
   <main>
     <section class="section_center">
+      <%if flash[:error]%>
+        <div class="alert alert-danger" role="alert">
+            <%= flash[:error]%>
+        </div>
+        <%elsif flash[:success]%>
+        <div class="alert alert-success" role="alert">
+            <%= flash[:success]%>
+        </div>
+      <%end%>
      <h1> Créer un événement </h1>
         <%= form_tag url_for(controller: "events", action: "create"), method: "post" do%>
             <div class= "form_inscription forms_gap">
