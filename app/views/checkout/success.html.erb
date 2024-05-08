@@ -1,0 +1,10 @@
+<section class=vh>
+  <div class="container text-center">
+    <h1>Paiement accepté</h1>
+    <p>Nous avons bien reçu votre paiement de <%= number_to_currency(@payment_intent.amount_received / 100.0, unit: "€", separator: ",", delimiter: "", format: "%n %u") %>.</p>
+    <p>Le statut de votre paiement est : <%= @payment_intent.status %>.</p>
+  </div>
+  <div class="container text-center">
+    <a href="/events" class="btn btn-primary btn_primary">Retournez à l'accueil</a>
+  </div>
+</section>

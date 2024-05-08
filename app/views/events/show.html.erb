@@ -25,8 +25,7 @@
             </div>
           </div>
           <p class=margin_bottom><%= @event.description%></p>
-
-        <a href="#" class="btn btn-primary btn_primary">Participer</a>
+          <%=button_to "Réserver une place", checkout_create_path(total:@event.price, event_id: @event.id), class: "btn btn-primary btn_primary", data: {turbo: false}%>
     </section>
   </main>
 </body>

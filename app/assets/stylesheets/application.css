@@ -53,7 +53,7 @@ h1 {
   font-style: normal;
   font-weight: 800;
   color: #0e173e;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .white {
@@ -245,6 +245,16 @@ i {
 
 .margin_bottom {
   margin-bottom: 0.5rem;
+}
+
+
+.vh{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
 }
 
 .plus_icone {
