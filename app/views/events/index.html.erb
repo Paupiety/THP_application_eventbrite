@@ -6,21 +6,10 @@
 </head>
 <body>
   <main>
-    <section class="hero_section">
-      <%if flash[:error]%>
-        <div class="alert alert-danger" role="alert">
-            <%= flash[:error]%>
-        </div>
-        <%elsif flash[:success]%>
-        <div class="alert alert-success" role="alert">
-            <%= flash[:success]%>
-        </div>
-      <%end%>
-      <div >
-        <h1 class=white> Bienvenue dans Eventbrite </h1>
-        <a href="/events/new" class="btn btn-primary btn_primary">Créer un événement</a>
-      </div> 
-    </section>
+    <%= render 'header' %>
+    <%= render 'layouts/flash' %>
+    <%= render 'hero_banner' %>
+    <%= render 'image_text' %>
     <section>
       <h1> Tous les événements </h1>
           <div class=cards>
@@ -41,7 +30,7 @@
                       <div class=price>
                         <%= event.price%>€
                       </div>
-                      <div>
+                      <div class="plus_icone_div">
                       <a href="/events/<%= event.id%>" class="btn btn-primary plus_icone"><i class="bi bi-plus"></i></a>
                       </div>
                     </div>

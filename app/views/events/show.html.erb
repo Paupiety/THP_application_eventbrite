@@ -6,40 +6,40 @@
 </head>
 <body>
   <main>
-    <section>
-      <%if flash[:error]%>
-        <div class="alert alert-danger" role="alert">
-            <%= flash[:error]%>
-        </div>
-        <%elsif flash[:success]%>
-        <div class="alert alert-success" role="alert">
-            <%= flash[:success]%>
-        </div>
-      <%end%>
-      <div>
-        <h1> Événement  </h1>
-      </div>  
+    <%= render 'layouts/flash' %>
+    <section class="hero_event">
+        <div class="title_width_event">
+          <h1 class="white hero_title"><%= @event.title%></h1>
+        </div> 
+      </section>
+    <section class="section_center section_event"> 
+      <div class="inline_event_infos">
         <div>
-          <h2 class=event_title><%= @event.title%></h2>
+          <h2 class="event_title phrase_accroche">Phrase d'accroche sur une ou plusieurs lignes suivant le besoin</h2>
           <p class="citation"> Crée par <%= @event.user.first_name%> <%= @event.user.last_name%></p>
-          <div class="inline margin_bottom">
-            <div class=infos_accueil>
-              <i class="bi bi-geo-alt-fill small_icone"></i> <%= @event.location%>
-            </div>
-            <div class=infos_accueil>
-              <i class="bi bi-calendar-event small_icone"></i> <%= @event.start_date.strftime('%d'"/"'%m'" à ""%H""h")%>
-            </div>
-            <div class=infos_accueil>
-              <i class="bi bi-clock-fill small_icone"></i> <%= @event.duration%> min
-            </div>
-          </div>
-          <p class=margin_bottom><%= @event.description%></p>
+          <p class=margin_bottom_event><%= @event.description%></p>
           <div class=inline>
             <%=button_to "Réserver une place", checkout_create_path(total:@event.price, event_id: @event.id), class: "btn btn-primary btn_primary", data: {turbo: false}%>
             <%if current_user?(@event)%>
               <a href="/events/<%=@event.id%>/attendances" class="btn btn-primary btn_primary">Voir les participants</a>
             <%end%>
           </div>
+        </div>
+            <div class="description_event">
+                <h2 class="event_title phrase_accroche white">Infos pratiques</h2>
+              <div>
+                <div class=infos_event>
+                  <i class="bi bi-geo-alt-fill"></i> <%= @event.location%>
+                </div>
+                <div class=infos_event>
+                  <i class="bi bi-calendar-event"></i> <%= @event.start_date.strftime('%d'"/"'%m'" à ""%H""h")%>
+                </div>
+                <div class=infos_event>
+                  <i class="bi bi-clock-fill"></i> <%= @event.duration%> min
+                </div>
+              </div>
+            </div>  
+      </div>
     </section>
   </main>
 </body>
