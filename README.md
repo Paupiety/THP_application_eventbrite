@@ -1,24 +1,37 @@
-# README
+# Application : The Gossip Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
 
-Things you may want to cover:
+The Gossip Project est une application qui permet de raconter les gossips de THP.
 
-* Ruby version
+### Features
+- S'inscrire à la plateforme
+- Se connecter
+- Créer des gossips (et les gérer)
+- Commenter les gossips (et gérer ses commentaires)
+- Aimer les gossips
 
-* System dependencies
+## Get started
 
-* Configuration
+````sh
+bundler install # installer les dépendances
+rails db:create #créer la bdd
+rails s # Tester l'application
+````
 
-* Database creation
+## arborescence de ce qui nous intéresse
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+````sh
+/app
+    /models #tous les models de l'application
+    /controllers #tous les controllers de l'application
+    /views #toutes les views de l'application
+    /helpers
+      /sessions_helper.rb #création d'helper pour une utilisation sur différents controllers
+    /assets
+      /stylesheets
+        /application.css #fichier contenant le CSS de toute l'application
+/db # Dossier contenant les migrations
+    /migrate #toutes les migrations des différents models
+    /seeds.rb #Pour tester l'application
+````
