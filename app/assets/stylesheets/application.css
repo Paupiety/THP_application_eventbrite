@@ -13,13 +13,12 @@
  *= require_tree .
  *= require_self
  */
- .cards {
+.cards {
   display: flex;
   flex-direction: row;
   gap: 2rem;
   flex-wrap: wrap;
 }
-
 
 body {
   --secondary_color: #7a5ff4;
@@ -43,8 +42,6 @@ section {
   gap: 2rem;
   padding: 5rem;
 }
-
-
 
 .section_center {
   align-items: center;
@@ -76,33 +73,32 @@ h2 {
   color: var(--primary_color);
 }
 
-.color_font_profil{
+.color_font_profil {
   font-weight: 600;
   color: var(--secondary_color);
 }
 
-.color_font_city{
+.color_font_city {
   font-weight: 600;
-  color:#f0f1f6;
+  color: #f0f1f6;
 }
 
-.color_font_city_inactive{ 
-font-weight: 600;
-color:var(--secondary_color);
+.color_font_city_inactive {
+  font-weight: 600;
+  color: var(--secondary_color);
 }
 
-
-.inline_city i{
+.inline_city i {
   font-size: 1rem;
   color: #f0f1f6;
 }
 
-.inline_city_inactive i{
+.inline_city_inactive i {
   font-size: 1rem;
   color: var(--secondary_color);
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -143,7 +139,7 @@ p {
   height: 100px;
 }
 
-.participants{
+.participants {
   flex-direction: column;
   display: flex;
   gap: 0.5rem;
@@ -199,13 +195,13 @@ a {
   max-width: 1000px;
 }
 
-.events_section{
+.events_section {
   display: flex;
   max-width: 1800px;
 }
 
-.valeurs{
-  background-color: var(--primary_color); 
+.valeurs {
+  background-color: var(--primary_color);
   color: white;
   padding: 2rem;
   border-radius: 15px;
@@ -213,29 +209,29 @@ a {
 
 .citation {
   font-style: italic;
-  font-size:1.5rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.background_section{
+.background_section {
   background-color: var(--secondary_color);
   height: 600px;
   justify-content: center;
 }
 
-.footer_absolute{
+.footer_absolute {
   position: sticky;
   width: 100%;
   bottom: 0%;
 }
 
-.inline_event_infos{
+.inline_event_infos {
   display: flex;
   gap: 5rem;
   max-width: 1800px;
 }
 
-.icone_valeur{
+.icone_valeur {
   border-radius: 999px;
   width: 6rem;
   height: 6rem;
@@ -243,11 +239,11 @@ a {
   margin-bottom: 2rem;
 }
 
-.valeurs_title{
+.valeurs_title {
   margin-bottom: 1rem;
 }
 
-.description_event{
+.description_event {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -268,7 +264,7 @@ a {
   font-style: normal;
 }
 
-.inline_valeurs{
+.inline_valeurs {
   display: flex;
   gap: 2rem;
   max-width: 1800px;
@@ -339,24 +335,23 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("../assets/hero.jpg") no-repeat center center;
+  background: url("hero.jpg") no-repeat center center;
   background-size: cover;
   height: 80vh;
 }
 
-.image_presentation{
-  background: url("../assets/presentation.jpg") no-repeat center 10%;
+.image_presentation {
+  background: url("presentation.jpg") no-repeat center 10%;
   background-size: cover;
   height: 600px;
   width: 100%;
 }
 
-.presentation_index{
+.presentation_index {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 50%;
-
 }
 
 .center_hero {
@@ -366,11 +361,11 @@ i {
   align-items: center;
 }
 
-.phrase_accroche{
+.phrase_accroche {
   font-size: 2rem;
 }
 
-.title_width_event{
+.title_width_event {
   max-width: 1800px;
 }
 
@@ -378,7 +373,7 @@ i {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: url("../assets/event.jpg") no-repeat center center;
+  background: url("event.jpg") no-repeat center center;
   background-size: cover;
   height: 30vh;
   align-items: center;
@@ -424,7 +419,7 @@ i {
   margin-bottom: 0.5rem;
 }
 
-.margin_bottom_event{
+.margin_bottom_event {
   margin-bottom: 2rem;
 }
 
@@ -467,18 +462,16 @@ i {
   justify-content: center;
 }
 
-.column_section_accueil{
+.column_section_accueil {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
   gap: 5rem;
   max-width: 1800px;
   align-self: center;
 }
 
-
-
-.plus_icone_div{
+.plus_icone_div {
   width: 3rem;
   height: 3rem;
 }
@@ -579,7 +572,6 @@ i {
   gap: 1rem;
 }
 
-
 .inline_city {
   display: flex;
   align-items: center;
@@ -592,12 +584,11 @@ i {
   gap: 1rem;
 }
 
-.header_structure{
+.header_structure {
   width: 100vw;
 }
 
-
-.card_profil{
+.card_profil {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -607,8 +598,8 @@ i {
   padding: 0.6rem 1.2rem;
 }
 
-.card_city{
-  width:fit-content ;
+.card_city {
+  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -618,8 +609,8 @@ i {
   padding: 0.6rem 1.2rem;
 }
 
-.card_city_inactive{
-  width:fit-content ;
+.card_city_inactive {
+  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -659,7 +650,7 @@ footer {
   background-color: var(--secondary_color);
 }
 
-.separateur_footer{
+.separateur_footer {
   height: 2rem;
   width: 1px;
   background-color: var(--secondary_color);
@@ -679,19 +670,17 @@ footer {
 .profil_image {
   width: 3rem;
   height: 3rem;
-  background: url("../assets/profil.jpg") no-repeat center center;
+  background: url("profil.jpg") no-repeat center center;
   background-size: cover;
   border-radius: 999px;
 }
-
-
 
 img {
   width: 100%;
   height: 100%;
 }
 
-.comment{
+.comment {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -699,39 +688,38 @@ img {
   width: 100%;
 }
 
-.comment_details{
+.comment_details {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  margin-bottom: 0.8rem;;
+  margin-bottom: 0.8rem;
   gap: 1rem;
 }
 
-.max_width_comment{
+.max_width_comment {
   width: 100%;
 }
 
-
-.comment_form{
+.comment_form {
   width: 300px;
   height: 50px;
   margin-bottom: 0.5rem;
 }
 
-.comment_p{
+.comment_p {
   margin-bottom: 0.1rem;
   padding: 0.1rem;
   font-size: 0.9rem;
 }
 
-.comment_space{
+.comment_space {
   margin-top: 1rem;
 }
 
 .comment_image {
   width: 4rem;
   height: 4rem;
-  background: url("../assets/profil.jpg") no-repeat center center;
+  background: url("profil.jpg") no-repeat center center;
   background-size: cover;
   border-radius: 999px;
   flex-shrink: 0;
